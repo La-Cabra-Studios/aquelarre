@@ -1,0 +1,45 @@
+
+<div class="_1column _rrirr">
+        <label class="_title">{{localize 'ATTR.rrShort'}}</label>
+        {{#if isEditable}}
+        <input type="number" 
+                {{{_disabled}}}
+                name="system.atributos.rr.value" 
+                value="{{system.atributos.rr.value}}" 
+                min="{{system.atributos.rr.min}}" 
+                max="{{system.atributos.rr.max}}"
+                class="_charRR">
+        {{else}}
+        <label class="_input _roll _charRR"
+                data-action="_roll"
+                data-target="attr"
+                data-path="rr.value"
+                data-tooltip="{{localize 'common.rollAttr'}}">
+                <span class="_value _center">{{system.atributos.rr.value}}</span>
+                <span class="_dice"><i class="fa-sharp fa-light fa-dice-d10"></i></span>
+        </label>         
+        {{/if}}  
+
+        <label class="_title">{{localize 'ATTR.irrShort'}}</label>
+        {{#if isEditable}}
+        <input type="number" 
+                {{{_disabled}}}
+                name="system.atributos.irr.value" 
+                value="{{system.atributos.irr.value}}" 
+                min="{{system.atributos.irr.min}}" 
+                max="{{system.atributos.irr.max}}"
+                class="_charIRR">
+        {{else}}
+        <label class="_input _roll _charIRR"
+                data-action="_roll"
+                data-target="attr"
+                data-path="irr.value"
+                data-tooltip="{{localize 'common.rollAttr'}}">
+                <span class="_value _center">{{system.atributos.irr.value}}</span>
+                <span class="_dice"><i class="fa-sharp fa-light fa-dice-d10"></i></span>
+        </label>         
+        {{/if}}     
+
+        <label class="_title _xsSize">{{localize 'common.heridaGrave'}}</label>
+        <label class="_input _charHG">{{system.salud.heridaGrave}}</label>
+</div>

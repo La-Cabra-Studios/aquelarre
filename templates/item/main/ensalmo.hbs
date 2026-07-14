@@ -1,0 +1,34 @@
+<div class="_main {{#if isEditable}}_editable{{/if}}">
+    <div class="_sheetContent">
+
+        {{!-- PROPERTIES --}}
+        <div class="_properties" style="margin: 1rem 0">
+            <div class="_row _gapped">
+                <label>{{localize 'common.ordo'}} :</label> 
+                <select name="system.ordo" {{{_disabled}}} style="width: calc(var(--fSize) * 10);" class="_accent">
+                {{selectOptions niveles 
+                                selected=system.ordo
+                                localize=false
+                                nameAttr="key"
+                                labelAttr="label" }}
+                </select>   
+                {{{checkButton 'system.propiedades.estadoGracia' 'tooltip.estadoGracia' 'fa-person-praying'}}}                            
+            </div>
+            <div class="_row _gapped _menu">
+                {{#if modeMass}}
+                    {{{navTab 'primary' (array 'propiedades' 'descripcion' 'massedit') '_expanded'}}}
+                {{else}}
+                    {{{navTab 'primary' (array 'propiedades' 'descripcion') '_expanded'}}}
+                {{/if}}
+            </div>            
+        </div> 
+
+        {{>tab_EnsalmosPropiedades}}
+        {{>tab_Descripcion}}
+        {{>tab_MassEdit}}
+        
+    </div>
+    <div class="_sheetFooter">
+        {{>item_footer}}
+    </div>    
+</div>
